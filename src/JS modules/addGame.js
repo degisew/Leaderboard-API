@@ -18,11 +18,21 @@ class MyGames {
   };
 
   static freshData = async () => {
-    await fetch(this.url, {
+    const displayDiv = document.querySelector('.display-score');
+    displayDiv.innerHTML = "<p id='loading'>Loading...</p>";
+    const response = await fetch(this.url, {
       headers: {
         'Content-Type': 'application/json',
       },
-    }).then((data) => data.json());
+    });
+    const parsed = await response.json();
+    const parsedData = parsed.result; // result key is retuned from API not created by Me.
+    displayDiv.innerHTML = '';
+    parsedData.forEach((each) => {
+      displayDiv.innerHTML += `
+      <li class="list-items">${each.user}: ${' '}${each.score}</li>
+      `;
+    });
   }
 }
 

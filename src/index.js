@@ -9,11 +9,17 @@ form.addEventListener('submit', async (e) => {
   const playerName = document.getElementById('player-name').value;
   const playerScore = document.getElementById('player-score').value;
   await MyGames.addScore({
-    name: playerName,
+    user: playerName,
     score: playerScore,
   });
+  document.getElementById('player-name').value = '';
+  document.getElementById('player-score').value = '';
 });
 
 refreshBtn.addEventListener('click', () => {
+  MyGames.freshData();
+});
+
+window.addEventListener('load', () => {
   MyGames.freshData();
 });
