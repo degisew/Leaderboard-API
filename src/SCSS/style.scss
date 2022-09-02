@@ -7,13 +7,12 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: rgb(239, 239, 229);
 }
 
 .main-section {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
   margin: auto;
   row-gap: 40px;
   padding: 25px;
@@ -24,11 +23,13 @@ body {
 
   .inner-container {
     display: flex;
+    width: 90%;
     column-gap: 40px;
-    padding-left: 30px;
+    //padding-left: 30px;
 
     .add-score {
       text-align: center;
+      width: 50%;
 
       h2 {
         margin-bottom: 15px;
@@ -53,6 +54,7 @@ body {
       }
 
       button {
+        display: flex;
         align-self: flex-end;
         border: 3px solid black;
         border-bottom: 5px solid black;
@@ -64,14 +66,20 @@ body {
     }
 
     .score-list {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
       .header {
         display: flex;
+        width: 100%;
         column-gap: 40px;
         margin-bottom: 15px;
         justify-content: space-between;
         align-items: center;
 
         button {
+          display: flex;
           border: 3px solid black;
           border-bottom: 5px solid black;
           border-right: 5px solid black;
@@ -85,6 +93,24 @@ body {
         display: flex;
         flex-direction: column;
         border: 3px solid black;
+
+        :nth-child(odd) {
+          background-color: rgb(175, 173, 173);
+        }
+
+        #loading {
+          text-align: center;
+          background-color: white;
+          font-size: 20px;
+        }
+
+        .list-items {
+          display: flex;
+          font-size: 20px;
+          align-items: center;
+          padding-left: 10px;
+          list-style-type: none;
+        }
       }
     }
   }
