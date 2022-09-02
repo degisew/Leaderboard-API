@@ -20,7 +20,7 @@ Run the command below from the Terminal:
       git clone <URL> 'https://github.com/degisew/Leaderboard-API' in your terminal
       
       cd hit-API
-
+## setup to start
       npm install
       npm run start
 ## Author
