@@ -141,7 +141,7 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **We will work on the website look and feel to make more interactive**
+- [ ] **We will work on the website look and feel to make it more interactive**
 - [ ] **We will implement it on our API**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -168,7 +168,7 @@ If you like this project, Kindly give a ⭐ to the repo.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- I would like to thank the Microverse and my Coding Partners.
+- I would like to thank Microverse and my Coding Partners.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
