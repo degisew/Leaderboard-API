@@ -13,10 +13,6 @@ class MyGames {
     return response.json();
   }
 
-  static displayScore = async () => {
-
-  };
-
   static freshData = async () => {
     const displayDiv = document.querySelector('.display-score');
     displayDiv.innerHTML = "<p id='loading'>Loading...</p>";

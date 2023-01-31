@@ -9,9 +9,26 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.main-section {
+$color: black;
+
+@mixin button {
+  display: flex;
+  border: 3px solid $color;
+  border-bottom: 5px solid $color;
+  border-right: 5px solid $color;
+  padding: 2px;
+  text-align: center;
+  font-size: 15px;
+}
+
+@mixin display {
   display: flex;
   flex-direction: column;
+}
+
+.main-section {
+  @include display;
+
   width: 90%;
   margin: auto;
   row-gap: 40px;
@@ -37,13 +54,13 @@ body {
       }
 
       #form {
-        display: flex;
-        flex-direction: column;
+        @include display;
+
         row-gap: 10px;
 
         .input {
           height: 25px;
-          border: 3px solid black;
+          border: 3px solid $color;
           padding-left: 10px;
         }
 
@@ -55,21 +72,16 @@ body {
       }
 
       button {
-        display: flex;
+        @include button;
+
         align-self: flex-end;
-        border: 3px solid black;
-        border-bottom: 5px solid black;
-        border-right: 5px solid black;
-        padding: 2px;
-        text-align: center;
-        font-size: 15px;
       }
     }
 
     .score-list {
       width: 50%;
-      display: flex;
-      flex-direction: column;
+
+      @include display;
 
       .header {
         display: flex;
@@ -80,14 +92,9 @@ body {
         align-items: center;
 
         button {
-          display: flex;
-          border: 3px solid black;
-          border-bottom: 5px solid black;
-          border-right: 5px solid black;
-          padding: 2px;
-          text-align: center;
-          font-size: 15px;
+          @include button;
         }
+
         h2 {
           font-size: 15px;
           font-weight: bold;
@@ -95,18 +102,12 @@ body {
       }
 
       .display-score {
-        display: flex;
-        flex-direction: column;
-        border: 3px solid black;
+        @include display;
+
+        border: 3px solid $color;
 
         :nth-child(odd) {
           background-color: rgb(175, 173, 173);
-        }
-
-        #loading {
-          text-align: center;
-          background-color: white;
-          font-size: 20px;
         }
 
         .list-items {
@@ -121,132 +122,30 @@ body {
   }
 }
 
-// @media (min-width: 400px) {
-//   .main-section {
-//     display: flex;
-//      flex-direction: column;
-//     width: 90%;
-//     row-gap: 40px;
-//   }
-//    .add-score {
-//       text-align: center;
-//       width: 50%;
-
-//       h2 {
-//         margin-bottom: 15px;
-//         font-size: 15px;
-//         font-weight: bold;
-//       }
-//     }
-// }
-
 @media (min-width: 768px) {
   .main-section {
-    display: flex;
-    flex-direction: column;
     width: 60%;
-    margin: auto;
-    row-gap: 40px;
-    padding: 25px;
-
-    h1 {
-      font-size: 40px;
-    }
 
     .inner-container {
-      display: flex;
-      width: 90%;
-      column-gap: 40px;
-
       .add-score {
-        text-align: center;
-        width: 50%;
-
         h2 {
-          margin-bottom: 15px;
           font-size: 20px;
           font-weight: 700;
-        }
-
-        #form {
-          display: flex;
-          flex-direction: column;
-          row-gap: 10px;
-
-          .input {
-            height: 25px;
-            border: 3px solid black;
-            padding-left: 10px;
-          }
-
-          ::placeholder {
-            font-size: 12px;
-            font-weight: bold;
-            font-family: "poppins", sans-serif;
-          }
-        }
-
-        button {
-          display: flex;
-          align-self: flex-end;
-          border: 3px solid black;
-          border-bottom: 5px solid black;
-          border-right: 5px solid black;
-          padding: 2px;
-          text-align: center;
-          font-size: 15px;
         }
       }
 
       .score-list {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-
         .header {
-          display: flex;
-          width: 100%;
-          column-gap: 40px;
-          margin-bottom: 15px;
-          justify-content: space-between;
-          align-items: center;
-
-          button {
-            display: flex;
-            border: 3px solid black;
-            border-bottom: 5px solid black;
-            border-right: 5px solid black;
-            padding: 2px;
-            text-align: center;
-            font-size: 15px;
-          }
           h2 {
-            font-size: 20px;
             font-weight: 700;
           }
         }
 
         .display-score {
-          display: flex;
-          flex-direction: column;
-          border: 3px solid black;
-
-          :nth-child(odd) {
-            background-color: rgb(175, 173, 173);
-          }
-
           #loading {
             text-align: center;
             background-color: white;
             font-size: 20px;
-          }
-
-          .list-items {
-            display: flex;
-            font-size: 20px;
-            align-items: center;
-            padding-left: 10px;
-            list-style-type: none;
           }
         }
       }
